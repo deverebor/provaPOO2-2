@@ -1,7 +1,7 @@
 public class Pessoa implements IPessoa {
   private Pessoa[] listaPessoas;
   private String name;
-  private String adress;
+  private String address;
   private String phone;
   private Integer max = 5;
   private Integer pointer = 0;
@@ -22,12 +22,12 @@ public class Pessoa implements IPessoa {
     this.name = name;
   }
 
-  public String getAdress() {
-    return adress;
+  public String getAddress() {
+    return address;
   }
 
-  public void setAdress(String adress) {
-    this.adress = adress;
+  public void setAddress(String address) {
+    this.address = address;
   }
 
   public void setPhone(String phone) {
@@ -40,23 +40,23 @@ public class Pessoa implements IPessoa {
       listaPessoas[pointer] = p;
       this.pointer++;
 
-      System.out.println("Contato adicionado com sucesso!");
+      System.out.println("Pessoa adicionado com sucesso!");
     } else {
-      System.err.println("[ERROR]: Já existe contatos demais na agenda, remova algum.");
+      System.err.println("[ERROR]: Não existe pessoas cadastradas, adicione alguma.");
     }
   }
 
   @Override
   public void removePeople(int id){
     if (listaPessoas == null || pointer < 0) {
-      System.err.println("[ERROR]: Não existe contatos na agenda, adicione algum.");
+      System.err.println("[ERROR]: Não existe pessoas cadastradas, adicione alguma.");
 
     } else {
       for (id = 0; id < pointer; id++) {
         listaPessoas[id] = null;
       }
 
-      System.out.println("\nContato removido com sucesso!\n");
+      System.out.println("\nPessoa removido com sucesso!\n");
     }
   }
 
@@ -65,14 +65,14 @@ public class Pessoa implements IPessoa {
     for (i = 0; i < pointer; i++) {
       if (p.equals(listaPessoas[i])) {
         listaPessoas[i].setName("");
-        listaPessoas[i].setAdress("");
+        listaPessoas[i].setAddress("");
         listaPessoas[i].setPhone("");
 
-        System.out.println("Contato alterado com sucesso!");
+        System.out.println("Pessoa alterado com sucesso!");
       }
     }
     if (listaPessoas == null || pointer < 0) {
-      System.err.println("[ERROR]: Não existe contatos na agenda, adicione algum.");
+      System.err.println("[ERROR]: Não existe pessoa na agenda, adicione algum.");
     }
   }
 
@@ -80,7 +80,7 @@ public class Pessoa implements IPessoa {
   public void showPeople(){
     for (Integer i = 0; i < pointer; i++) {
       System.out.println("\nSeu nome é: " + listaPessoas[i].getName());
-      System.out.println("Seu telefone é: " + listaPessoas[i].getAdress());
+      System.out.println("Seu telefone é: " + listaPessoas[i].getAddress());
       System.out.println("Seu endereço é: " + listaPessoas[i].getPhone());
     }
   }
