@@ -1,4 +1,4 @@
-public class Funcionario {
+public class Funcionario extends Pessoa {
   private String departament;
   private Integer matriculation;
 

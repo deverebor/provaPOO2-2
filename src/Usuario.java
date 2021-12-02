@@ -1,4 +1,4 @@
-public class Usuario {
+public class Usuario extends Pessoa {
   private String login;
   private String password;
   private String encryptePassword;
